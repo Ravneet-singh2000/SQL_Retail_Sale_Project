@@ -134,7 +134,7 @@ Select
         TO_CHAR (SALE_DATE, 'mm') as Month,
         TO_CHAR (SALE_dATE,'YYYY') AS Year,
         RANK ()over( partition by TO_CHAR (SALE_dATE,'YYYY') order by avg(total_sale) DESC) 
-FRO, retail_Sales
+FROM, retail_Sales
 GROUP BY 2,3
 ORDER BY 3) AS T1
 WHERE rank = 1
